@@ -15,12 +15,9 @@ public class MyDodo extends Dodo
     }
 
     public void act() {
-        if (canLayEgg()) {
         
-        layEgg();
-        }
     }
-
+    
     /**
      * Move one cell forward in the current direction.
      * 
@@ -134,4 +131,9 @@ public class MyDodo extends Dodo
             return true;
         }
     }  
+    
+    public void turn180() {
+        turnRight();
+        turnRight();
+    }
 }
