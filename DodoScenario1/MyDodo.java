@@ -52,6 +52,17 @@ public class MyDodo extends Dodo
         }
     }
 
+    public void climbOverFence() {
+        turnLeft();
+        move();
+        turnRight();
+        move();
+        move();
+        turnRight();
+        move();
+        turnLeft();
+    }
+    
     /**
      * Hatches the egg in the current cell by removing
      * the egg from the cell.
