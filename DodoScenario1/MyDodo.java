@@ -63,6 +63,17 @@ public class MyDodo extends Dodo
         turnLeft();
     }
     
+    public boolean grainAhead() {
+            move();
+            boolean gotGrain = onGrain();
+            turnLeft();
+            turnLeft();
+            move();
+            turnRight();
+            turnRight();
+            return gotGrain;
+    }
+    
     /**
      * Hatches the egg in the current cell by removing
      * the egg from the cell.
