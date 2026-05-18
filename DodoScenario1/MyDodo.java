@@ -51,7 +51,10 @@ public class MyDodo extends Dodo
             return true;
         }
     }
-
+    
+    /**
+     * The Dodo can move over the fence to climb around.
+     */
     public void climbOverFence() {
         turnLeft();
         move();
@@ -63,6 +66,10 @@ public class MyDodo extends Dodo
         turnLeft();
     }
     
+    /**
+     * The Dodo grab the grain that is infront of where the Dodo is facing.
+     * 
+     */
     public boolean grainAhead() {
             move();
             boolean gotGrain = onGrain();
@@ -90,6 +97,17 @@ public class MyDodo extends Dodo
             showError( "There was no egg in this cell" );
         }
     }
+    
+    
+    /**
+     * The Dodo can walk to the egg 
+     */
+    public void gotoEgg() {
+        while (!onEgg() && !borderAhead()){
+        move();
+        }
+    }
+    
     
     /**
      * Returns the number of eggs Dodo has hatched so far.
@@ -154,6 +172,9 @@ public class MyDodo extends Dodo
         }
     }  
     
+    /**
+     * The Dodo turns around 180 degrees.
+     */
     public void turn180() {
         turnRight();
         turnRight();
