@@ -97,6 +97,14 @@ public class MyDodo extends Dodo
             return gotGrain;
     }
     
+    public void pickUpGrainsAndPrintCoordinates() {
+        while (!borderAhead()){
+        if (grainAhead() == true) {
+            
+        }
+        }
+    }    
+    
     /**
      * Hatches the egg in the current cell by removing
      * the egg from the cell.
