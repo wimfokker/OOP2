@@ -145,13 +145,21 @@ public class MyDodo extends Dodo
      *              Coordinates of each cell printed in the console.
      */
 
-    public void walkToWorldEdge( ){
+    public void walkToWorldEdge(){
         while( ! borderAhead() ){
             System.out.println("Coordinates"+ super.getX() +"," + super.getY());// print coordinates
             move();
             
             
         }
+    }
+    /**
+     * The Dodo turns around and walks to the edge of the world and then turns around.
+     */
+    public void goBackToStartOfRowAndFaceBack(){
+        turn180();
+        walkToWorldEdge();
+        turn180();
     }
 
     /**
