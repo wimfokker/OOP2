@@ -100,7 +100,8 @@ public class MyDodo extends Dodo
     
     
     /**
-     * The Dodo can walk to the egg 
+     * The Dodo can walk to the egg.
+     * The Dodo stops if theres a border ahead.
      */
     public void gotoEgg() {
         while (!onEgg() && !borderAhead()){
@@ -144,11 +145,12 @@ public class MyDodo extends Dodo
      *              Coordinates of each cell printed in the console.
      */
 
-    public void walkToWorldEdgePrintingCoordinates( ){
+    public void walkToWorldEdge( ){
         while( ! borderAhead() ){
-            
             System.out.println("Coordinates"+ super.getX() +"," + super.getY());// print coordinates
             move();
+            
+            
         }
     }
 
