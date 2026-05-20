@@ -65,6 +65,22 @@ public class MyDodo extends Dodo
         move();
         turnLeft();
     }
+    /**
+     * The Dodo walks to the front of a fence
+     * checks if there's a fence ahead.
+     * climbes over the fence.
+     * move and checks again.
+     */
+    public void walkToWorldEdgeClimbingOverFences() {
+        while (!borderAhead()){
+        if  (fenceAhead() == true) {
+        climbOverFence();
+        } else{
+        move();
+        }
+        }
+    }
+    
     
     /**
      * The Dodo grab the grain that is infront of where the Dodo is facing.
