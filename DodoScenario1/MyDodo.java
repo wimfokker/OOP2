@@ -97,10 +97,18 @@ public class MyDodo extends Dodo
             return gotGrain;
     }
     
+    /**
+     * This methode is were the Dodo moves to the edge of the world
+     * and prints the coordinates of the positions were the grains were.
+     */
     public void pickUpGrainsAndPrintCoordinates() {
         while (!borderAhead()){
-        if (grainAhead() == true) {
-            
+        if (grainAhead()) {
+            move();
+            pickUpGrain();
+            System.out.println("Grain at" + getX() + "," + getY());
+        } else{
+            move();
         }
         }
     }    

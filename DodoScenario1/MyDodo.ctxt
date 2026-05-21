@@ -43,6 +43,7 @@ comment7.target=boolean\ grainAhead()
 comment7.text=\r\n\ The\ Dodo\ grab\ the\ grain\ that\ is\ infront\ of\ where\ the\ Dodo\ is\ facing.\r\n\ \r\n
 comment8.params=
 comment8.target=void\ pickUpGrainsAndPrintCoordinates()
+comment8.text=\r\n\ This\ methode\ is\ were\ the\ Dodo\ moves\ to\ the\ edge\ of\ the\ world\r\n\ and\ prints\ the\ coordinates\ of\ the\ positions\ were\ the\ grains\ were.\r\n
 comment9.params=
 comment9.target=void\ hatchEgg()
 comment9.text=\r\n\ Hatches\ the\ egg\ in\ the\ current\ cell\ by\ removing\r\n\ the\ egg\ from\ the\ cell.\r\n\ Gives\ an\ error\ message\ if\ there\ is\ no\ egg\r\n\ \r\n\ <p>\ Initial\:\ Dodo\ is\ somewhere\ in\ the\ world.\ There\ is\ an\ egg\ in\ Dodo's\ cell.\r\n\ <p>\ Final\:\ Dodo\ is\ in\ the\ same\ cell.\ The\ egg\ has\ been\ removed\ (hatched).\ \ \ \ \ \r\n
