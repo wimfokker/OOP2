@@ -84,19 +84,24 @@ public class MyDodo extends Dodo
     
     /**
      * The Dodo grab the grain that is infront of where the Dodo is facing.
-     * 
+     * This methode has a submethode stepOneCellBackwards() for the dodo to step back.
      */
     public boolean grainAhead() {
             move();
             boolean gotGrain = onGrain();
-            turnLeft();
-            turnLeft();
-            move();
-            turnRight();
-            turnRight();
+            stepOneCellBackwards();
             return gotGrain;
     }
     
+    /**
+     * This methode is for the Dodo to go a step back.
+     */
+    public void stepOneCellBackwards() {
+            turn180();
+            step();
+            turn180();
+    }
+
     /**
      * This methode is were the Dodo moves to the edge of the world
      * and prints the coordinates of the positions were the grains were.
