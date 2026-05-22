@@ -32,6 +32,7 @@ comment18.target=void\ layEggOnEmptyNests()
 comment18.text=\r\n\ This\ methode\ makes\ the\ Dodo\ lay\ egg\ on\ the\ nests\ all\ to\ the\ row.\r\n\ The\ last\ if\ is\ for\ the\ dodo\ to\ lay\ an\ egg\ on\ the\ nest\ on\ the\ last\ cell\ of\ the\ grid.\r\n
 comment19.params=
 comment19.target=void\ walkAroundFencedArea()
+comment19.text=\r\n\ This\ methode\ makes\ the\ Dodo\ go\ around\ a\ fenced\ area\ to\ get\ to\ a\ egg.\r\n\ With\ the\ dodo\ stopping\ by\ the\ egg.\r\n
 comment2.params=
 comment2.target=void\ act()
 comment3.params=

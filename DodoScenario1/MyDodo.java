@@ -251,15 +251,17 @@ public class MyDodo extends Dodo
         }
     }
     
+    /**
+     * This methode makes the Dodo go around a fenced area to get to a egg.
+     * With the dodo stopping by the egg.
+     */
     public void walkAroundFencedArea() {
-        move();
-        while(! onEgg()) {
-            if (fenceAhead()) {
-                turnRight();
-            } else if(canMove()){
+        while (!onEgg()) {
+            turnRight();
+            while(fenceAhead()){
                 turnLeft();
-                move();
             }
+            move();
         }
     }
 }
