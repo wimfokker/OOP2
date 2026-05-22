@@ -189,7 +189,9 @@ public class MyDodo extends Dodo
             
             
         }
+    
     }
+    
     /**
      * The Dodo turns around and walks to the edge of the world and then turns around.
      */
@@ -225,5 +227,20 @@ public class MyDodo extends Dodo
     public void turn180() {
         turnRight();
         turnRight();
+    }
+    /**
+     * This methode makes the Dodo lay egg on the nests all to the row.
+     * The last if is for the dodo to lay an egg on the nest on the last cell of the grid.
+     */
+    public void layEggOnEmptyNests() {
+        while( ! borderAhead() ) {
+            if ( onNest() && !onEgg()) {
+            layEgg();
+            }
+            move();
+        }
+        if ( onNest() && !onEgg()) {
+        layEgg();
+        }
     }
 }
