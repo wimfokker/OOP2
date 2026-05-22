@@ -66,6 +66,7 @@ public class MyDodo extends Dodo
         turnLeft();
     }
     /**
+     * The Dodo lays egg in the nests on the way
      * The Dodo walks to the front of a fence
      * checks if there's a fence ahead.
      * climbes over the fence.
@@ -73,11 +74,17 @@ public class MyDodo extends Dodo
      */
     public void walkToWorldEdgeClimbingOverFences() {
         while (!borderAhead()){
-        if  (fenceAhead() == true) {
-        climbOverFence();
-        } else{
-        move();
+            if (onNest() && !onEgg()) {
+            layEgg();
+            }
+            if  (fenceAhead() == true) {
+            climbOverFence();
+            } else{
+            move();
+            }
         }
+        if (onNest() && !onEgg()) {
+            layEgg();
         }
     }
     
