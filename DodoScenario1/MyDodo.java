@@ -264,4 +264,19 @@ public class MyDodo extends Dodo
             move();
         }
     }
+    
+    /**
+     * The Dodo can follow with this methode a trail of eggs to the nest.
+     */
+    public void eggTrailToNest() {
+        while (!onNest()) {
+             if (eggAhead() || nestAhead() == true) {
+            move();
+            } else {
+            turnRight();
+            if (!eggAhead()) {         
+            turn180(); }
+            } 
+        }
+    }
 }
