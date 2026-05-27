@@ -283,7 +283,7 @@ public class MyDodo extends Dodo
     /**
      * This Methode makes the Dodo go through the route of a maze to the nest.
      */
-    public void eenvoudigDoolhof() {
+    public void goFindNestInMaze() {
         while (!onNest()) {
             turnRight();
             while(fenceAhead()) {
