@@ -319,4 +319,8 @@ public class MyDodo extends Dodo
             turnLeft();
         }
     }
+    
+    public void goToLocation() {
+        
+    }
     }
