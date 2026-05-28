@@ -292,4 +292,22 @@ public class MyDodo extends Dodo
             move();
         }
     }
+    /**
+     * This methode makes the eggs changes values were the temporary egg
+     * gets the value of the blue egg and the blue egg gets the value
+     * of the golden egg,
+     * while the golden egg gets the value of the temporary egg.
+     */
+    public void changeEggValue() {
+        BlueEgg blueEgg = new BlueEgg(); // value 1
+        GoldenEgg goldenEgg = new GoldenEgg(); //value 5
+        
+        int temporaryValueEgg = blueEgg.getValue(); // value 1
+        
+        blueEgg.setValue(goldenEgg.getValue()); // value 1
+        goldenEgg.setValue(temporaryValueEgg);
+        
+        System.out.println(goldenEgg.getValue());
+        System.out.println(blueEgg.getValue());
+    }
 }
