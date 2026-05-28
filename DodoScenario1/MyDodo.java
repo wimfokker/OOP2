@@ -310,4 +310,13 @@ public class MyDodo extends Dodo
         System.out.println(goldenEgg.getValue());
         System.out.println(blueEgg.getValue());
     }
-}
+    
+    /**
+     * This methode is for the Dodo to face east.
+     */
+    public void faceEast() {
+        while (getDirection() != 1){
+            turnLeft();
+        }
+    }
+    }
