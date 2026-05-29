@@ -192,11 +192,8 @@ public class MyDodo extends Dodo
     public void walkToWorldEdge(){
         while( ! borderAhead() ){
             System.out.println("Coordinates"+ super.getX() +"," + super.getY());// print coordinates
-            move();
-            
-            
+            move();   
         }
-    
     }
     
     /**
@@ -235,6 +232,7 @@ public class MyDodo extends Dodo
         turnRight();
         turnRight();
     }
+    
     /**
      * This methode makes the Dodo lay egg on the nests all to the row.
      * The last if is for the dodo to lay an egg on the nest on the last cell of the grid.
@@ -292,6 +290,7 @@ public class MyDodo extends Dodo
             move();
         }
     }
+    
     /**
      * This methode makes the eggs changes values were the temporary egg
      * gets the value of the blue egg and the blue egg gets the value
@@ -348,5 +347,9 @@ public class MyDodo extends Dodo
             jump(moveY);
         }
     }
-
+    
+    public void validCoordinates(int x, int y) {
+        moveX = x - getX;
+        moveY = y - getY;
     }
+}
