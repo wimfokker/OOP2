@@ -320,7 +320,30 @@ public class MyDodo extends Dodo
         }
     }
     
-    public void goToLocation() {
-        
+    /**
+     * This methode can make the Dodo follow the cordinates in the grid.
+     */
+    public void goToLocation(int coordX, int coordY) {
+        int moveX = coordX - getX();
+        int moveY = coordY - getY();
+        if (moveX > 0) {
+            moveX = moveX +-1;
+            setDirection(0);
+            jump(moveX);
+        } else {
+            setDirection(0);
+            turn180();
+            jump(moveX);
+        }
+        if (moveY > 0) {
+            moveY = moveY +-1;
+            setDirection(0);
+            jump(moveY);
+        } else {
+            setDirection(0);
+            turn180();
+            jump(moveY);
+        }
     }
+
     }
