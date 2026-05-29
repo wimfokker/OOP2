@@ -348,8 +348,16 @@ public class MyDodo extends Dodo
         }
     }
     
-    public void validCoordinates(int x, int y) {
-        moveX = x - getX;
-        moveY = y - getY;
+    /**
+     * This methode checks if the coordinates are within or outside the grid.
+     * It shows an error message if the coordinates is out of bounds.
+     */
+    public boolean validCoordinates(int x, int y) {
+        if (x >= 0 && x < getWorld().getWidth() && y >= 0 && y < getWorld().getHeight()) {
+            return true;
+        } else {
+            showError("Invalid coordinates");
+            return false;
+        }
     }
 }
