@@ -313,11 +313,14 @@ public class MyDodo extends Dodo
     
     /**
      * This methode is for the Dodo that he can change direction of face.
+     * Para direction is what the Dodo would be facing.
      */
-    public void faceDirection(int direction) {
-        while (getDirection() != direction){
+    public void faceDirection(int directions) {
+        if (directions >= 0 && directions <= 3) {
+        while (getDirection() != directions){
             turnLeft();
         }
+    }
     }
     
     /**
