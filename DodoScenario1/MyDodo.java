@@ -204,6 +204,26 @@ public class MyDodo extends Dodo
         walkToWorldEdge();
         turn180();
     }
+    
+    /**
+     * The Eggs are counted in a row, and the Dodo returns to the start.
+     * showCompliment prints how many eggs are counted.
+     */
+    public int countEggsInRow() {
+        int eggCount = 0;
+        while (!borderAhead()) {
+            if (onEgg()) {
+                eggCount++;
+            }
+            move();
+        }
+        if (onEgg()) {
+            eggCount++;
+        }
+        goBackToStartOfRowAndFaceBack();
+        showCompliment("Eieren:" + eggCount);
+        return eggCount;
+    }
 
     /**
      * Test if Dodo can lay an egg.
