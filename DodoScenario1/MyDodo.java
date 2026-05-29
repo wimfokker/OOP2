@@ -312,10 +312,10 @@ public class MyDodo extends Dodo
     }
     
     /**
-     * This methode is for the Dodo to face east.
+     * This methode is for the Dodo that he can change direction of face.
      */
-    public void faceEast() {
-        while (getDirection() != 1){
+    public void faceDirection(int direction) {
+        while (getDirection() != direction){
             turnLeft();
         }
     }
