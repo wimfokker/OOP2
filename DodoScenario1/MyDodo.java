@@ -224,6 +224,10 @@ public class MyDodo extends Dodo
         showCompliment("Eieren:" + eggCount);
         return eggCount;
     }
+    
+    public void countWorldEggs() {
+        
+    }
 
     /**
      * Test if Dodo can lay an egg.
