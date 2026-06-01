@@ -380,4 +380,16 @@ public class MyDodo extends Dodo
             return false;
         }
     }
+    
+    /**
+     * The Dodo wil walk while laying eggs and stop by the last egg.
+     */
+    public void layTrailOfEggs(int n) {
+        int layEggTrail = 0;
+        while (layEggTrail < n && !borderAhead()) {
+            move();
+            layEgg();
+            layEggTrail++;
+        }
+    }
 }
