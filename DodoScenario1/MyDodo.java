@@ -226,7 +226,16 @@ public class MyDodo extends Dodo
     }
     
     public void countWorldEggs() {
-        
+        goToLocation(0,0);
+        faceDirection(1);
+        int eggs = 0;
+        int location = 1;
+        while (validCoordinates (0, location)) {
+            goToLocation(0, location);
+            faceDirection(1);
+            eggs = countEggsInRow() + eggs;
+            
+        }
     }
 
     /**
