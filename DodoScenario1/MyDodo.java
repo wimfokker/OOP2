@@ -405,9 +405,11 @@ public class MyDodo extends Dodo
     public void layTrailOfEggs(int n) {
         int layEggTrail = 0;
         while (layEggTrail < n && !borderAhead()) {
-            move();
             layEgg();
             layEggTrail++;
+            if (layEggTrail < n) {
+            move();
+            }
         }
     }
     
@@ -432,5 +434,17 @@ public class MyDodo extends Dodo
         goToLocation(0,0);
         System.out.println("Row with the most eggs" + mostRow);
         return mostRow;
+    }
+    
+    public void monumentOfEggs() {
+        int startX = getX();
+        int startY = getY();
+        int row = 0;
+        while (validCoordinates(startX, startY + row)) {
+            goToLocation(startX, startY + row);
+            faceDirection(1);
+            layTrailOfEggs(row + 1);
+            row++;
+        }
     }
 }
