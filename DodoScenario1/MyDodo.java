@@ -437,7 +437,9 @@ public class MyDodo extends Dodo
         System.out.println("Row with the most eggs" + mostRow);
         return mostRow;
     }
-    
+    /**
+     * In This methode crates a momument of eggs in the grid.
+     */
     public void monumentOfEggs() {
         int startX = getX();
         int startY = getY();
@@ -449,6 +451,7 @@ public class MyDodo extends Dodo
             row++;
         }
     }
+    
     /**
      * This methode is for the Dodo to create a solid monument taht dubbles the row.
      */
