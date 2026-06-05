@@ -449,4 +449,20 @@ public class MyDodo extends Dodo
             row++;
         }
     }
+    /**
+     * This methode is for the Dodo to create a solid monument taht dubbles the row.
+     */
+    public void solidMonumentOfEggs() {
+        int startX = getX();
+        int startY = getY();
+        int row = 0;
+        int eggs = 1;
+        while (validCoordinates(startX, startY + row)) {
+            goToLocation(startX, startY + row);
+            faceDirection(1);
+            layTrailOfEggs(eggs);
+            eggs *= 2;
+            row++;
+        }
+    }
 }
