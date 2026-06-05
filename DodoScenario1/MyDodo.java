@@ -404,11 +404,13 @@ public class MyDodo extends Dodo
      */
     public void layTrailOfEggs(int n) {
         int layEggTrail = 0;
-        while (layEggTrail < n && !borderAhead()) {
+        while (layEggTrail < n) {
             layEgg();
             layEggTrail++;
-            if (layEggTrail < n) {
+            if (layEggTrail < n && !borderAhead()) {
             move();
+            } else if (borderAhead()){
+                break;
             }
         }
     }
