@@ -76,6 +76,7 @@ comment31.target=void\ solidMonumentOfEggs()
 comment31.text=\r\n\ This\ methode\ is\ for\ the\ Dodo\ to\ create\ a\ solid\ monument\ taht\ dubbles\ the\ row.\r\n
 comment32.params=
 comment32.target=void\ pyramid()
+comment32.text=\r\n\ This\ methode\ makes\ the\ Dodo\ place\ a\ pyramide\ of\ eggs\r\n
 comment4.params=
 comment4.target=boolean\ canMove()
 comment4.text=\r\n\ Test\ if\ Dodo\ can\ move\ forward,\ (there\ are\ no\ obstructions\r\n\ \ \ \ or\ end\ of\ world\ in\ the\ cell\ in\ front\ of\ her).\r\n\ \r\n\ <p>\ Initial\:\ Dodo\ is\ somewhere\ in\ the\ world\r\n\ <p>\ Final\:\ \ \ Same\ as\ initial\ situation\r\n\ \r\n\ @return\ boolean\ true\ if\ Dodo\ can\ move\ (no\ obstructions\ ahead)\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ false\ if\ Dodo\ can't\ move\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (an\ obstruction\ or\ end\ of\ world\ ahead)\r\n

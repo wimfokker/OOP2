@@ -468,4 +468,18 @@ public class MyDodo extends Dodo
             row++;
         }
     }
+    /**
+     * This methode makes the Dodo place a pyramide of eggs
+     */
+    public void pyramid() {
+        int startX = getX();
+        int startY = getY();
+        int row = 0;
+        int eggs = 1;
+        while (validCoordinates(startX, startY + row)) {
+            goToLocation(startX - row, startY + row);
+            faceDirection(1);
+            layTrailOfEggs(eggs);
+            eggs += 2;
+            row++;
 }
