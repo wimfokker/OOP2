@@ -400,6 +400,28 @@ public class MyDodo extends Dodo
     }
     
     /**
+     * This function solves the average eggs in a row.
+     * and gives the numbers wat the average eggs are in a row using typecasting.
+     */
+    public double averageEggsInRows() {
+        goToLocation(0,0);
+        faceDirection(1);
+        int totalEggs = 0;
+        int totalRows = 0;
+        int location = 0;
+        while (validCoordinates(0, location)) {
+            goToLocation (0, location);
+            faceDirection(1);
+            totalEggs += countEggsInRow();
+            totalRows++;
+            location++;
+        }
+        double average = (double) totalEggs / totalRows;
+        System.out.println ("average eggs:" + average);
+        return average;
+    }
+    
+    /**
      * The Dodo wil walk while laying eggs and stop by the last egg.
      */
     public void layTrailOfEggs(int n) {
@@ -437,6 +459,7 @@ public class MyDodo extends Dodo
         System.out.println("Row with the most eggs" + mostRow);
         return mostRow;
     }
+    
     /**
      * In This methode crates a momument of eggs in the grid.
      */
@@ -468,6 +491,7 @@ public class MyDodo extends Dodo
             row++;
         }
     }
+    
     /**
      * This methode makes the Dodo place a pyramide of eggs
      */
@@ -482,4 +506,6 @@ public class MyDodo extends Dodo
             layTrailOfEggs(eggs);
             eggs += 2;
             row++;
+        }
+    }
 }
