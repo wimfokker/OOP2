@@ -410,4 +410,27 @@ public class MyDodo extends Dodo
             layEggTrail++;
         }
     }
+    
+    /**
+     * This methode is were the Dodo counts and print which row has the most eggs.
+     * If there are two rows with the same amount of eggs than wint the first one.
+     */
+    public int findRowWithMostEggs() {
+        int maxEggs = 0;
+        int mostRow = 0;
+        int location = 0;
+        while (validCoordinates(0, location)) {
+            goToLocation(0, location);
+            faceDirection(1);
+            int eggsInRow = countEggsInRow();
+            if(eggsInRow > maxEggs) {
+            maxEggs = eggsInRow;
+            mostRow = location;
+            }
+            location++;
+        }
+        goToLocation(0,0);
+        System.out.println("Row with the most eggs" + mostRow);
+        return mostRow;
+    }
 }
