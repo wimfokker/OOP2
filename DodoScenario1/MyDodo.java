@@ -220,7 +220,7 @@ public class MyDodo extends Dodo
         if (onEgg()) {
             eggCount++;
         }
-        goBackToStartOfRowAndFaceBack();
+        //goBackToStartOfRowAndFaceBack();
         showCompliment("Eieren:" + eggCount);
         return eggCount;
     }
@@ -234,8 +234,9 @@ public class MyDodo extends Dodo
             goToLocation(0, location);
             faceDirection(1);
             eggs = countEggsInRow() + eggs;
-            
+            location++;
         }
+        showCompliment("Eieren:" + eggs);
     }
 
     /**
@@ -362,16 +363,17 @@ public class MyDodo extends Dodo
         int moveX = coordX - getX();
         int moveY = coordY - getY();
         if (moveX > 0) {
-            moveX = moveX +-1;
             setDirection(0);
+            turnRight();
             jump(moveX);
         } else {
+            moveX = moveX *-1;
             setDirection(0);
-            turn180();
+            turnLeft();
             jump(moveX);
         }
-        if (moveY > 0) {
-            moveY = moveY +-1;
+        if (moveY < 0) {
+            moveY = moveY *-1;
             setDirection(0);
             jump(moveY);
         } else {
