@@ -26,6 +26,7 @@ comment16.target=int\ countEggsInRow()
 comment16.text=\r\n\ The\ Eggs\ are\ counted\ in\ a\ row,\ and\ the\ Dodo\ returns\ to\ the\ start.\r\n\ showCompliment\ prints\ how\ many\ eggs\ are\ counted.\r\n
 comment17.params=
 comment17.target=void\ countWorldEggs()
+comment17.text=\r\n\ The\ Dodo\ can\ count\ all\ the\ eggs\ in\ the\ world\ grid.\ \r\n
 comment18.params=
 comment18.target=boolean\ canLayEgg()
 comment18.text=\r\n\ Test\ if\ Dodo\ can\ lay\ an\ egg.\r\n\ \ \ \ \ \ \ \ \ \ (there\ is\ not\ already\ an\ egg\ in\ the\ cell)\r\n\ \r\n\ <p>\ Initial\:\ Dodo\ is\ somewhere\ in\ the\ world\r\n\ <p>\ Final\:\ \ \ Same\ as\ initial\ situation\r\n\ \r\n\ @return\ boolean\ true\ if\ Dodo\ can\ lay\ an\ egg\ (no\ egg\ there)\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ false\ if\ Dodo\ can't\ lay\ an\ egg\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (already\ an\ egg\ in\ the\ cell)\r\n

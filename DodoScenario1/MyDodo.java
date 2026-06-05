@@ -225,6 +225,9 @@ public class MyDodo extends Dodo
         return eggCount;
     }
     
+    /**
+     * The Dodo can count all the eggs in the world grid. 
+     */
     public void countWorldEggs() {
         goToLocation(0,0);
         faceDirection(1);
