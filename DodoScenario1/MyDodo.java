@@ -508,4 +508,13 @@ public class MyDodo extends Dodo
             row++;
         }
     }
-}
+    
+    public void parityEggs() {
+        goToLocation(0,0);
+        faceDirection(1);
+        int eggs = 0;
+        int startX = 0;
+        int startY = 0;
+        
+        
+    }
