@@ -220,7 +220,7 @@ public class MyDodo extends Dodo
         if (onEgg()) {
             eggCount++;
         }
-        //goBackToStartOfRowAndFaceBack();
+        goBackToStartOfRowAndFaceBack();
         showCompliment("Eieren:" + eggCount);
         return eggCount;
     }
@@ -424,10 +424,10 @@ public class MyDodo extends Dodo
     public void makeEggsEven() {
         goToLocation(0,0);
         faceDirection(1);
-        int errorInLineX = -1;
-        int errorInLineY = -1;
         int startX = 0;
         int startY = 0;
+        int errorInLineX = -1;
+        int errorInLineY = -1;
         while(startX < getWorld().getHeight()) {
             goToLocation(0,startX);
             faceDirection(1);
@@ -439,10 +439,10 @@ public class MyDodo extends Dodo
         }
         while(startY < getWorld().getWidth()) {
             goToLocation(startY,0);
-            faceDirection(2);
+            faceDirection(0);
             int eggs = countEggsInRow();
             if (eggs % 2==1) {
-            errorInLineX = getY();
+            errorInLineY = getX();
             }
             startY++;
         }
