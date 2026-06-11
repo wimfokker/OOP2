@@ -176,7 +176,7 @@ public class MyDodo extends Dodo
         while ( nrStepsTaken < distance ) { // check if more steps must be taken  
             move();                         // take a step
             nrStepsTaken++;                 // increment the counter
-            System.out.println(nrStepsTaken + "moved");
+            //System.out.println(nrStepsTaken + "moved");
         }
     }
     
@@ -421,6 +421,37 @@ public class MyDodo extends Dodo
         return average;
     }
     
+    public void makeEggsEven() {
+        goToLocation(0,0);
+        faceDirection(1);
+        int errorInLineX = -1;
+        int errorInLineY = -1;
+        int startX = 0;
+        int startY = 0;
+        while(startX < getWorld().getHeight()) {
+            goToLocation(0,startX);
+            faceDirection(1);
+            int eggs = countEggsInRow();
+            if(eggs % 2==1) {
+            errorInLineX = getY();
+            }
+            startX++;
+        }
+        while(startY < getWorld().getWidth()) {
+            goToLocation(startY,0);
+            faceDirection(2);
+            int eggs = countEggsInRow();
+            if (eggs % 2==1) {
+            errorInLineX = getY();
+            }
+            startY++;
+        }
+        if (errorInLineX != -1 && errorInLineY != -1) {
+            goToLocation (errorInLineX, errorInLineY);
+            layEgg();
+        }
+    }
+    
     /**
      * The Dodo wil walk while laying eggs and stop by the last egg.
      */
@@ -508,13 +539,4 @@ public class MyDodo extends Dodo
             row++;
         }
     }
-    
-    public void parityEggs() {
-        goToLocation(0,0);
-        faceDirection(1);
-        int eggs = 0;
-        int startX = 0;
-        int startY = 0;
-        
-        
-    }
+}
