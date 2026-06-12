@@ -191,7 +191,7 @@ public class MyDodo extends Dodo
 
     public void walkToWorldEdge(){
         while( ! borderAhead() ){
-            System.out.println("Coordinates"+ super.getX() +"," + super.getY());// print coordinates
+            //System.out.println("Coordinates"+ super.getX() +"," + super.getY());// print coordinates
             move();   
         }
     }
@@ -221,7 +221,7 @@ public class MyDodo extends Dodo
             eggCount++;
         }
         goBackToStartOfRowAndFaceBack();
-        showCompliment("Eieren:" + eggCount);
+        //showCompliment("Eieren:" + eggCount);
         return eggCount;
     }
     
@@ -422,8 +422,6 @@ public class MyDodo extends Dodo
     }
     
     public void makeEggsEven() {
-        goToLocation(0,0);
-        faceDirection(1);
         int startX = 0;
         int startY = 0;
         int errorInLineX = -1;
@@ -434,20 +432,23 @@ public class MyDodo extends Dodo
             int eggs = countEggsInRow();
             if(eggs % 2==1) {
             errorInLineX = getY();
+            System.out.println(errorInLineX);
             }
             startX++;
         }
+        
         while(startY < getWorld().getWidth()) {
             goToLocation(startY,0);
             faceDirection(0);
             int eggs = countEggsInRow();
             if (eggs % 2==1) {
             errorInLineY = getX();
+            System.out.println(errorInLineY);
             }
             startY++;
         }
         if (errorInLineX != -1 && errorInLineY != -1) {
-            goToLocation (errorInLineX, errorInLineY);
+            goToLocation (errorInLineY, errorInLineX);
             layEgg();
         }
     }
