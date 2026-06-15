@@ -421,6 +421,10 @@ public class MyDodo extends Dodo
         return average;
     }
     
+    
+    /**
+     * In this methode the Dodo would try to fix the world with making the eggs even.
+     */
     public void makeEggsEven() {
         int startX = 0;
         int startY = 0;
@@ -428,22 +432,21 @@ public class MyDodo extends Dodo
         int errorInLineY = -1;
         while(startX < getWorld().getHeight()) {
             goToLocation(0,startX);
-            faceDirection(1);
+            faceDirection(EAST); //Direction you set the the cardinal direction.
             int eggs = countEggsInRow();
             if(eggs % 2==1) {
             errorInLineX = getY();
-            System.out.println(errorInLineX);
             }
             startX++;
         }
         
         while(startY < getWorld().getWidth()) {
             goToLocation(startY,0);
-            faceDirection(0);
+            faceDirection(SOUTH); //The Dodo will need to face south when placing eggs.
             int eggs = countEggsInRow();
+            System.out.println(eggs);
             if (eggs % 2==1) {
             errorInLineY = getX();
-            System.out.println(errorInLineY);
             }
             startY++;
         }

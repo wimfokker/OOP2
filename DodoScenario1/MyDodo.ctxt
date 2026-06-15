@@ -64,6 +64,7 @@ comment28.target=double\ averageEggsInRows()
 comment28.text=\r\n\ This\ function\ solves\ the\ average\ eggs\ in\ a\ row.\r\n\ and\ gives\ the\ numbers\ wat\ the\ average\ eggs\ are\ in\ a\ row\ using\ typecasting.\r\n
 comment29.params=
 comment29.target=void\ makeEggsEven()
+comment29.text=\r\n\ In\ this\ methode\ the\ Dodo\ would\ try\ to\ fix\ the\ world\ with\ making\ the\ eggs\ even.\r\n
 comment3.params=
 comment3.target=void\ move()
 comment3.text=\r\n\ Move\ one\ cell\ forward\ in\ the\ current\ direction.\r\n\ \r\n\ <P>\ Initial\:\ Dodo\ is\ somewhere\ in\ the\ world\r\n\ <P>\ Final\:\ If\ possible,\ Dodo\ has\ moved\ forward\ one\ cell\r\n\r\n
