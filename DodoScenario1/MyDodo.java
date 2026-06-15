@@ -456,6 +456,22 @@ public class MyDodo extends Dodo
         }
     }
     
+    public void afterHittingHatmakeEggsEven() {
+        int moved = 0;
+            while (!borderAhead()){
+            int eggs = countEggsInRow();
+            goBackToStartOfRowAndFaceBack();
+            if(eggs % 2==1) {
+                walkToWorldEdge();
+                turn180();
+                walkToWorldEdge();
+                turn180();
+                while (!borderAhead()){
+                    
+                }
+            }
+        }
+    }
     /**
      * The Dodo wil walk while laying eggs and stop by the last egg.
      */
