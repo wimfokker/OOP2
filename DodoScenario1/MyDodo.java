@@ -8,16 +8,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyDodo extends Dodo
 {
     private int myNrOfEggsHatched;
-    
+
     public MyDodo() {
         super( EAST );
         myNrOfEggsHatched = 0;
     }
 
     public void act() {
-        
+
     }
-    
+
     /**
      * Move one cell forward in the current direction.
      * 
@@ -51,7 +51,7 @@ public class MyDodo extends Dodo
             return true;
         }
     }
-    
+
     /**
      * The Dodo can move over the fence to climb around.
      */
@@ -65,6 +65,7 @@ public class MyDodo extends Dodo
         move();
         turnLeft();
     }
+
     /**
      * The Dodo lays egg in the nests on the way
      * The Dodo walks to the front of a fence
@@ -75,38 +76,37 @@ public class MyDodo extends Dodo
     public void walkToWorldEdgeClimbingOverFences() {
         while (!borderAhead()){
             if (onNest() && !onEgg()) {
-            layEgg();
+                layEgg();
             }
             if  (fenceAhead() == true) {
-            climbOverFence();
+                climbOverFence();
             } else{
-            move();
+                move();
             }
         }
         if (onNest() && !onEgg()) {
             layEgg();
         }
     }
-    
-    
+
     /**
      * The Dodo grab the grain that is infront of where the Dodo is facing.
      * This methode has a submethode stepOneCellBackwards() for the dodo to step back.
      */
     public boolean grainAhead() {
-            move();
-            boolean gotGrain = onGrain();
-            stepOneCellBackwards();
-            return gotGrain;
+        move();
+        boolean gotGrain = onGrain();
+        stepOneCellBackwards();
+        return gotGrain;
     }
-    
+
     /**
      * This methode is for the Dodo to go a step back.
      */
     public void stepOneCellBackwards() {
-            turn180();
-            step();
-            turn180();
+        turn180();
+        step();
+        turn180();
     }
 
     /**
@@ -115,16 +115,16 @@ public class MyDodo extends Dodo
      */
     public void pickUpGrainsAndPrintCoordinates() {
         while (!borderAhead()){
-        if (grainAhead()) {
-            move();
-            pickUpGrain();
-            System.out.println("Grain at" + getX() + "," + getY());
-        } else{
-            move();
-        }
+            if (grainAhead()) {
+                move();
+                pickUpGrain();
+                System.out.println("Grain at" + getX() + "," + getY());
+            } else{
+                move();
+            }
         }
     }    
-    
+
     /**
      * Hatches the egg in the current cell by removing
      * the egg from the cell.
@@ -141,19 +141,17 @@ public class MyDodo extends Dodo
             showError( "There was no egg in this cell" );
         }
     }
-    
-    
+
     /**
      * The Dodo can walk to the egg.
      * The Dodo stops if theres a border ahead.
      */
     public void gotoEgg() {
         while (!onEgg() && !borderAhead()){
-        move();
+            move();
         }
     }
-    
-    
+
     /**
      * Returns the number of eggs Dodo has hatched so far.
      * 
@@ -162,7 +160,7 @@ public class MyDodo extends Dodo
     public int getNrOfEggsHatched() {
         return myNrOfEggsHatched;
     }
-    
+
     /**
      * Move given number of cells forward in the current direction.
      * 
@@ -179,8 +177,7 @@ public class MyDodo extends Dodo
             //System.out.println(nrStepsTaken + "moved");
         }
     }
-    
-    
+
     /**
      * Walks to edge of the world printing the coordinates at each step
      * 
@@ -195,7 +192,7 @@ public class MyDodo extends Dodo
             move();   
         }
     }
-    
+
     /**
      * The Dodo turns around and walks to the edge of the world and then turns around.
      */
@@ -204,7 +201,7 @@ public class MyDodo extends Dodo
         walkToWorldEdge();
         turn180();
     }
-    
+
     /**
      * The Eggs are counted in a row, and the Dodo returns to the start.
      * showCompliment prints how many eggs are counted.
@@ -224,7 +221,7 @@ public class MyDodo extends Dodo
         //showCompliment("Eieren:" + eggCount);
         return eggCount;
     }
-    
+
     /**
      * The Dodo can count all the eggs in the world grid. 
      */
@@ -261,7 +258,7 @@ public class MyDodo extends Dodo
             return true;
         }
     }  
-    
+
     /**
      * The Dodo turns around 180 degrees.
      */
@@ -269,7 +266,7 @@ public class MyDodo extends Dodo
         turnRight();
         turnRight();
     }
-    
+
     /**
      * This methode makes the Dodo lay egg on the nests all to the row.
      * The last if is for the dodo to lay an egg on the nest on the last cell of the grid.
@@ -277,15 +274,15 @@ public class MyDodo extends Dodo
     public void layEggOnEmptyNests() {
         while( ! borderAhead() ) {
             if ( onNest() && !onEgg()) {
-            layEgg();
+                layEgg();
             }
             move();
         }
         if ( onNest() && !onEgg()) {
-        layEgg();
+            layEgg();
         }
     }
-    
+
     /**
      * This methode makes the Dodo go around a fenced area to get to a egg.
      * With the dodo stopping by the egg.
@@ -299,22 +296,22 @@ public class MyDodo extends Dodo
             move();
         }
     }
-    
+
     /**
      * The Dodo can follow with this methode a trail of eggs to the nest.
      */
     public void eggTrailToNest() {
         while (!onNest()) {
-             if (eggAhead() || nestAhead() == true) {
-            move();
+            if (eggAhead() || nestAhead() == true) {
+                move();
             } else {
-            turnRight();
-            if (!eggAhead()) {         
-            turn180(); }
+                turnRight();
+                if (!eggAhead()) {         
+                    turn180(); }
             } 
         }
     }
-    
+
     /**
      * This Methode makes the Dodo go through the route of a maze to the nest.
      */
@@ -327,7 +324,7 @@ public class MyDodo extends Dodo
             move();
         }
     }
-    
+
     /**
      * This methode makes the eggs changes values were the temporary egg
      * gets the value of the blue egg and the blue egg gets the value
@@ -337,28 +334,28 @@ public class MyDodo extends Dodo
     public void changeEggValue() {
         BlueEgg blueEgg = new BlueEgg(); // value 1
         GoldenEgg goldenEgg = new GoldenEgg(); //value 5
-        
+
         int temporaryValueEgg = blueEgg.getValue(); // value 1
-        
+
         blueEgg.setValue(goldenEgg.getValue()); // value 1
         goldenEgg.setValue(temporaryValueEgg);
-        
+
         System.out.println(goldenEgg.getValue());
         System.out.println(blueEgg.getValue());
     }
-    
+
     /**
      * This methode is for the Dodo that he can change direction of face.
      * Para direction is what the Dodo would be facing.
      */
     public void faceDirection(int directions) {
         if (directions >= 0 && directions <= 3) {
-        while (getDirection() != directions){
-            turnLeft();
+            while (getDirection() != directions){
+                turnLeft();
+            }
         }
     }
-    }
-    
+
     /**
      * This methode can make the Dodo follow the cordinates in the grid.
      */
@@ -385,7 +382,7 @@ public class MyDodo extends Dodo
             jump(moveY);
         }
     }
-    
+
     /**
      * This methode checks if the coordinates are within or outside the grid.
      * It shows an error message if the coordinates is out of bounds.
@@ -398,7 +395,7 @@ public class MyDodo extends Dodo
             return false;
         }
     }
-    
+
     /**
      * This function solves the average eggs in a row.
      * and gives the numbers wat the average eggs are in a row using typecasting.
@@ -420,8 +417,7 @@ public class MyDodo extends Dodo
         System.out.println ("average eggs:" + average);
         return average;
     }
-    
-    
+
     /**
      * In this methode the Dodo would try to fix the world with making the eggs even.
      */
@@ -435,18 +431,18 @@ public class MyDodo extends Dodo
             faceDirection(EAST); //Direction you set the the cardinal direction.
             int eggs = countEggsInRow();
             if(eggs % 2==1) {
-            errorInLineX = getY();
+                errorInLineX = getY();
             }
             startX++;
         }
-        
+
         while(startY < getWorld().getWidth()) {
             goToLocation(startY,0);
             faceDirection(SOUTH); //The Dodo will need to face south when placing eggs.
             int eggs = countEggsInRow();
             System.out.println(eggs);
             if (eggs % 2==1) {
-            errorInLineY = getX();
+                errorInLineY = getX();
             }
             startY++;
         }
@@ -456,22 +452,63 @@ public class MyDodo extends Dodo
         }
     }
     
-    public void afterHittingHatmakeEggsEven() {
+    /**
+     * In this methode the Dodo can fix the world with making the eggs even
+     * without the compas related functions.
+     *
+     */
+    public void afterHittingHatMakeEggsEven() {
+        goBackToStartOfRowAndFaceBack();
+        turnLeft();
+        goBackToStartOfRowAndFaceBack();
+        int errorInLineX = -1;
+        int errorInLineY = -1;
         int moved = 0;
-            while (!borderAhead()){
+        while (!borderAhead()){
             int eggs = countEggsInRow();
-            goBackToStartOfRowAndFaceBack();
             if(eggs % 2==1) {
-                walkToWorldEdge();
-                turn180();
-                walkToWorldEdge();
-                turn180();
-                while (!borderAhead()){
-                    
-                }
+                errorInLineY = moved;
             }
+            goBackToStartOfRowAndFaceBack();
+            turnRight();
+            if (!borderAhead()) {
+                move();
+            }else{
+                break;
+            }
+            turnLeft();
+            moved++;
         }
+        goBackToStartOfRowAndFaceBack();
+        
+        moved = 0;
+
+        while (!borderAhead()){
+            int eggs = countEggsInRow();
+            if(eggs % 2==1) {
+                errorInLineX = moved;
+            }
+            goBackToStartOfRowAndFaceBack();
+            turnLeft();
+            if (!borderAhead()) {
+                move();
+            }else{
+                break;
+            }
+            turnRight();
+            moved++;
+        }
+        
+        showCompliment(errorInLineX + " : " + errorInLineY);
+        
+        goBackToStartOfRowAndFaceBack();
+        jump(errorInLineX);
+        turnRight();
+        jump(errorInLineY);
+        
+        layEgg();
     }
+
     /**
      * The Dodo wil walk while laying eggs and stop by the last egg.
      */
@@ -481,13 +518,13 @@ public class MyDodo extends Dodo
             layEgg();
             layEggTrail++;
             if (layEggTrail < n && !borderAhead()) {
-            move();
+                move();
             } else if (borderAhead()){
                 break;
             }
         }
     }
-    
+
     /**
      * This methode is were the Dodo counts and print which row has the most eggs.
      * If there are two rows with the same amount of eggs than wint the first one.
@@ -501,8 +538,8 @@ public class MyDodo extends Dodo
             faceDirection(1);
             int eggsInRow = countEggsInRow();
             if(eggsInRow > maxEggs) {
-            maxEggs = eggsInRow;
-            mostRow = location;
+                maxEggs = eggsInRow;
+                mostRow = location;
             }
             location++;
         }
@@ -510,7 +547,7 @@ public class MyDodo extends Dodo
         System.out.println("Row with the most eggs" + mostRow);
         return mostRow;
     }
-    
+
     /**
      * In This methode crates a momument of eggs in the grid.
      */
@@ -525,7 +562,7 @@ public class MyDodo extends Dodo
             row++;
         }
     }
-    
+
     /**
      * This methode is for the Dodo to create a solid monument taht dubbles the row.
      */
@@ -542,7 +579,7 @@ public class MyDodo extends Dodo
             row++;
         }
     }
-    
+
     /**
      * This methode makes the Dodo place a pyramide of eggs
      */
