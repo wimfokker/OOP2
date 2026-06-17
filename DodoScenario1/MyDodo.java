@@ -435,7 +435,6 @@ public class MyDodo extends Dodo
             }
             startX++;
         }
-
         while(startY < getWorld().getWidth()) {
             goToLocation(startY,0);
             faceDirection(SOUTH); //The Dodo will need to face south when placing eggs.
