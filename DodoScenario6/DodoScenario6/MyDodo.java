@@ -130,4 +130,5 @@ public class MyDodo extends Dodo
         double average = total / eggs.size();
         System.out.println(average);
     }
+    
 }
