@@ -117,4 +117,17 @@ public class MyDodo extends Dodo
             printCoordinatesOfEgg(egg);
         }
     }
+    
+    /**
+     * In this methode Mimi will place 10 eggs and calculate the average value.
+     */
+    public void averageEggValue() {
+        List<SurpriseEgg> eggs = makeListOfSupriseEggs();
+        double total = 0;
+        for (SurpriseEgg egg :eggs){
+            total += egg.getValue();
+        }
+        double average = total / eggs.size();
+        System.out.println(average);
+    }
 }
