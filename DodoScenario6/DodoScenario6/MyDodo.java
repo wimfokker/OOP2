@@ -90,12 +90,31 @@ public class MyDodo extends Dodo
         //the following is incorrect and is to be fixed in challenge 6.1c
         System.out.println("First element: " + listOfNumbers.get(1) ); 
     }
-
+    
     public void practiceWithListsOfSurpriseEggs( ){
         List<SurpriseEgg>  listOfEgss = SurpriseEgg.generateListOfSurpriseEggs( 12, getWorld() );
     }
     
+    /**
+     * This methode will place 10 suprise eggs on the grid.
+     */
     public List<SurpriseEgg> makeListOfSupriseEggs() {
         return SurpriseEgg.generateListOfSurpriseEggs( 10, getWorld());
     }
+    
+    /**
+     * Mimi will print the coordinates of an egg in the world.
+     */
+    public void printCoordinatesOfEgg(Egg egg) {
+        System.out.println (egg.getX() + "." + egg.getY());
     }
+    
+    /**
+     * The Dodo will make a list of suprise eggs and print the coordinates.
+     */
+    public void makeListOfSupriseEggsAndprintCoordinates() {
+        for (Egg egg: makeListOfSupriseEggs()) {
+            printCoordinatesOfEgg(egg);
+        }
+    }
+}
