@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.List;
 
 /**
  *
@@ -594,5 +595,51 @@ public class MyDodo extends Dodo
             eggs += 2;
             row++;
         }
+    }
+    
+    public void moveRandomly() {
+        for(int myNrStepsTaken = 0; myNrStepsTaken < Mauritius.MAXSTEPS;) {
+            myNrStepsTaken++;
+            faceDirection(randomDirection());
+            if (canMove()) {
+                move();
+            }
+        }
+    }
+    
+    /**
+     * This methode will place 10 suprise eggs on the grid.
+     */
+    public List<SurpriseEgg> makeListOfSupriseEggs() {
+        return SurpriseEgg.generateListOfSurpriseEggs( 10, getWorld());
+    }
+    
+    /**
+     * Mimi will print the coordinates of an egg in the world.
+     */
+    public void printCoordinatesOfEgg(Egg egg) {
+        System.out.println (egg.getX() + "." + egg.getY());
+    }
+    
+    /**
+     * The Dodo will make a list of suprise eggs and print the coordinates.
+     */
+    public void makeListOfSupriseEggsAndprintCoordinates() {
+        for (Egg egg: makeListOfSupriseEggs()) {
+            printCoordinatesOfEgg(egg);
+        }
+    }
+    
+    /**
+     * In this methode Mimi will place 10 eggs and calculate the average value.
+     */
+    public void averageEggValue() {
+        List<SurpriseEgg> eggs = makeListOfSupriseEggs();
+        double total = 0;
+        for (SurpriseEgg egg :eggs){
+            total += egg.getValue();
+        }
+        double average = total / eggs.size();
+        System.out.println(average);
     }
 }

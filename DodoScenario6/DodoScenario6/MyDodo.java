@@ -95,6 +95,16 @@ public class MyDodo extends Dodo
         List<SurpriseEgg>  listOfEgss = SurpriseEgg.generateListOfSurpriseEggs( 12, getWorld() );
     }
     
+    public void moveRandomly() {
+        for(int myNrStepsTaken = 0; myNrStepsTaken < Mauritius.MAXSTEPS;) {
+            myNrStepsTaken++;
+            faceDirection(randomDirection());
+            if (canMove()) {
+                move();
+            }
+        }
+    }
+    
     /**
      * This methode will place 10 suprise eggs on the grid.
      */
