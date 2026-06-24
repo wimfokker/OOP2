@@ -611,6 +611,10 @@ public class MyDodo extends Dodo
         }
     }
     
+    public void getScore(int score1, int score2) {
+        
+    }
+    
     /**
      * This methode will place 10 suprise eggs on the grid.
      */
