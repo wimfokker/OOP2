@@ -597,13 +597,17 @@ public class MyDodo extends Dodo
         }
     }
     
+    /**
+     * The Dodo will move 40 steps without stopping by the end of the world.
+     */
     public void moveRandomly() {
         for(int myNrStepsTaken = 0; myNrStepsTaken < Mauritius.MAXSTEPS;) {
+            move();
             myNrStepsTaken++;
-            faceDirection(randomDirection());
-            if (canMove()) {
-                move();
+            if (borderAhead() || fenceAhead()) {
+                turnRight();
             }
+            System.out.println(myNrStepsTaken);
         }
     }
     
