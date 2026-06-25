@@ -614,6 +614,13 @@ public class MyDodo extends Dodo
         }
     }
     
+    public void NearestEgg() {
+        List<Egg> eggs = getWorld().getObjects(Egg.class);
+        for(Egg egg : eggs){
+            System.out.printlin();
+        }
+    }
+    
     public void getScore(int score1, int score2) {
         ((Mauritius)getWorld()).updateScore(score1, score2);
     }
