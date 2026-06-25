@@ -599,11 +599,14 @@ public class MyDodo extends Dodo
     
     /**
      * The Dodo will move 40 steps without stopping by the end of the world.
+     * And can go with the scoreboard
      */
     public void moveRandomly() {
-        for(int myNrStepsTaken = 0; myNrStepsTaken < Mauritius.MAXSTEPS;) {
+        int scoreSteps = Mauritius.MAXSTEPS;
+        for(int myNrStepsTaken = 0; myNrStepsTaken < Mauritius.MAXSTEPS; myNrStepsTaken = myNrStepsTaken +1) {
             move();
-            myNrStepsTaken++;
+            scoreSteps = scoreSteps - 1;
+            getScore(scoreSteps, 0);
             if (borderAhead() || fenceAhead()) {
                 turnRight();
             }
@@ -612,7 +615,7 @@ public class MyDodo extends Dodo
     }
     
     public void getScore(int score1, int score2) {
-        
+        ((Mauritius)getWorld()).updateScore(score1, score2);
     }
     
     /**
