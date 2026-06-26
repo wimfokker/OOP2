@@ -9,6 +9,8 @@ import java.util.List;
 public class MyDodo extends Dodo
 {
     private int myNrOfEggsHatched;
+    private int mySteps = 0;
+    private int myScore = 0;
 
     public MyDodo() {
         super( EAST );
@@ -618,7 +620,7 @@ public class MyDodo extends Dodo
     /**
      * In this methode Mimi will walk to the closed egg and pick it up.
      */
-    public void NearestEgg() {
+    public void nearestEgg() {
         List<Egg> eggs = getWorld().getObjects(Egg.class);
         Egg nearestEgg = eggs.get(0);
         int nearEgg = Integer.MAX_VALUE;
@@ -633,8 +635,47 @@ public class MyDodo extends Dodo
                 nearestEgg = egg;
             }
         }
+        myScore += nearestEgg.getValue();
         goToLocation(nearestEgg.getX(), nearestEgg.getY());
         pickUpEgg();
+    }
+    
+    /**
+     * In this methode the dodo will try to get as many eggs
+     * while having a max of 40 steps.
+     */
+    public void dodoRace() {
+        while(getWorld().getObjects(Egg.class).size() > 0 && mySteps < Mauritius.MAXSTEPS) {
+            List<Egg> eggs = getWorld().getObjects(Egg.class);
+            Egg targetEgg = eggs.get(0);
+            int nearEgg = Integer.MAX_VALUE;
+            
+            for(Egg egg : eggs){
+                int eggX = egg.getX() - getX();
+                int eggY = egg.getY() - getY();
+                int theNearestEgg = eggX * eggX + eggY * eggY;
+                if (theNearestEgg < nearEgg) {
+                    nearEgg = theNearestEgg;
+                    targetEgg = egg;
+                }
+            }
+            int stepsX = targetEgg.getX() - getX();
+            int stepsY = targetEgg.getY() - getY();
+            if (stepsX < 0) {
+                stepsX = stepsX * -1;
+            }
+            if (stepsY < 0) {
+                stepsY = stepsY * -1;
+            }
+            int stepsNeeded = stepsX + stepsY;
+            
+            if (mySteps + stepsNeeded > Mauritius.MAXSTEPS) {
+                break;
+            }
+            nearestEgg();
+            mySteps += stepsNeeded;
+            getScore(Mauritius.MAXSTEPS - mySteps, myScore);
+        } 
     }
     
     /**
