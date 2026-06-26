@@ -614,13 +614,32 @@ public class MyDodo extends Dodo
         }
     }
     
+    
+    /**
+     * In this methode Mimi will walk to the closed egg and pick it up.
+     */
     public void NearestEgg() {
         List<Egg> eggs = getWorld().getObjects(Egg.class);
+        Egg nearestEgg = eggs.get(0);
+        int nearEgg = Integer.MAX_VALUE;
+        
         for(Egg egg : eggs){
-            System.out.printlin();
+            int eggX = egg.getX() - getX();
+            int eggY = egg.getY() - getY();
+            int theNearestEgg = eggX * eggX + eggY * eggY;
+            
+            if (theNearestEgg < nearEgg) {
+                nearEgg = theNearestEgg;
+                nearestEgg = egg;
+            }
         }
+        goToLocation(nearestEgg.getX(), nearestEgg.getY());
+        pickUpEgg();
     }
     
+    /**
+     * This methode is the scoreboard for myDodo.
+     */
     public void getScore(int score1, int score2) {
         ((Mauritius)getWorld()).updateScore(score1, score2);
     }
